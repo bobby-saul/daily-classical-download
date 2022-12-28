@@ -2,6 +2,10 @@ import fetch from "node-fetch";
 import { parseStringPromise } from "xml2js";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Download the RSS feed
 async function getRSS() {
@@ -16,7 +20,7 @@ async function getRSS() {
 function downloadMp3(item) {
   const name = item.title[0].replace(/[/\\?%*:|"<>]/g, "");
   const url = item.enclosure[0]["$"].url;
-  const filePath = path.join(process.cwd(), "data", name + ".mp3");
+  const filePath = path.join(__dirname, "data", name + ".mp3");
   // Check if file exists
   if (fs.existsSync(filePath)) {
     console.log(`File already exists: ${filePath}`);
