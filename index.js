@@ -7,7 +7,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Download the RSS feed
+// Download the RSS feed and convert xml to json.
 async function getRSS() {
   return fetch(
     "https://feeds.publicradio.org/public_feeds/daily-download/rss/rss.rss"
@@ -16,7 +16,7 @@ async function getRSS() {
     .then(async (xml) => parseStringPromise(xml));
 }
 
-// Download mp3
+// Download mp3 file
 function downloadMp3(item) {
   const name = item.title[0].replace(/[/\\?%*:|"<>]/g, "");
   const url = item.enclosure[0]["$"].url;
@@ -35,7 +35,10 @@ function downloadMp3(item) {
   });
 }
 
+// Get rss feed and download all mp3 items
 getRSS().then((json) => {
   const items = json.rss.channel[0].item;
-  downloadMp3(items[0]);
+  items.forEach((item) => {
+    downloadMp3(item);
+  });
 });
