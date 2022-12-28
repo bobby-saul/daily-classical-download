@@ -1,0 +1,24 @@
+{
+  "name": "daily-classical-download",
+  "version": "1.0.0",
+  "description": "A program to download the Your Classical Daily Download.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobby-saul/daily-classical-download.git"
+  },
+  "type": "module",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bobby-saul/daily-classical-download/issues"
+  },
+  "homepage": "https://github.com/bobby-saul/daily-classical-download#readme",
+  "dependencies": {
+    "inquirer": "^9.1.4",
+    "node-fetch": "^3.3.0",
+    "xml2js": "^0.4.23"
+  }
+}
