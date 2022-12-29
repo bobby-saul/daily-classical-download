@@ -9,8 +9,8 @@ A program to download the
   - [x] Get available downloads from RSS feed.
   - [x] Check if MP3 is already downloaded
   - [x] Download MP3 to directory
-- [ ] Make CLI
+- [x] Make CLI
 - [ ] Add cron job
 - [ ] Settings
-  - [ ] Change where downloads are saved
+  - [x] Change where downloads are saved
   - [ ] Add cron option
