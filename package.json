@@ -4,6 +4,8 @@
   "description": "A program to download the Your Classical Daily Download.",
   "main": "index.js",
   "scripts": {
+    "download": "node ./index.js download",
+    "config": "node ./index.js config",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +22,6 @@
     "chalk": "^5.2.0",
     "inquirer": "^9.1.4",
     "node-fetch": "^3.3.0",
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.5.0"
   }
 }
